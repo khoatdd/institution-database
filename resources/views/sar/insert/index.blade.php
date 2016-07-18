@@ -117,7 +117,7 @@
                         <div role="tabpanel" class="tab-pane" id="tab3">
                             <h2 class="text-center">Cán bộ giảng viên, nhân viên</h2>
                             <hr>
-                            @include('sar.insert.p3')
+                            {{-- @include('sar.insert.p3') --}}
                         </div>
                         <div role="tabpanel" class="tab-pane" id="tab4">
                             <h2 class="text-center">Người học</h2>

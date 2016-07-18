@@ -34,8 +34,8 @@ class SarController extends Controller
 
     public function insert(Institution $institution)
     {
-        $titles = Title::all();
-        return view('sar.insert.index', compact('institution', 'titles'));
+        // $titles = Title::all();
+        return view('sar.insert.index', compact('institution'));
     }
 
     public function addSar(Institution $institution, Request $request)
