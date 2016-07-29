@@ -3,8 +3,9 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSarSecondaryDatasTable extends Migration
+class CreateSarSecondaryDataListsTable extends Migration
 {
+    public $timestamps = false;
     /**
      * Run the migrations.
      *
@@ -12,14 +13,11 @@ class CreateSarSecondaryDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('sar_secondary_datas', function (Blueprint $table) {
+        Schema::create('sar_secondary_data_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sar_id')->unsigned()->index();
             $table->integer('vertical_attribute_id')->unsigned()->index();
             $table->integer('horizontal_attribute_id')->unsigned()->index();
-            $table->integer('child_table_id')->unsigned()->index();
-            $table->float('value');
-            $table->timestamps();
+            $table->integer('section_id')->unsigned()->index();
         });
     }
 
@@ -30,6 +28,6 @@ class CreateSarSecondaryDatasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sar_secondary_datas');
+        Schema::drop('sar_secondary_data_lists');
     }
 }

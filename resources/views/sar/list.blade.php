@@ -9,9 +9,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($sars as $sar)
+				@foreach ($sars as $key => $value)
 					<tr>
-						<td><a href="/institution/{{ $institution->id }}/sar/{{ $sar->id }}/show">Báo cáo tự đánh giá giai đoạn {{ $sar->period_start }} - {{ $sar->period_end }}</a></td>
+						<td><a href="/institution/{{ $institution->id }}/sar/{{ $key }}/show">Báo cáo tự đánh giá giai đoạn {{ 
+							$value[0]->value}} - {{ $value[1]->value }}</a></td>
 					</tr>
 				@endforeach
 			</tbody>

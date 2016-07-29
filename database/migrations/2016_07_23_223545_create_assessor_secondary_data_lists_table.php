@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectionsTable extends Migration
+class CreateAssessorSecondaryDataListsTable extends Migration
 {
     public $timestamps = false;
     /**
@@ -13,9 +13,8 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('assessor_secondary_data_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('module');
             $table->string('name');
         });
     }
@@ -27,6 +26,6 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sections');
+        Schema::drop('assessor_secondary_data_lists');
     }
 }

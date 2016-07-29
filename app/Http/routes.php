@@ -26,4 +26,5 @@ Route::group(['prefix' => 'institution/{institution}/sar'], function(){
     Route::get('{sar}/update', 'SarController@update');
     Route::post('addSar', 'SarController@addSar');
 });
-Route::get('/check', 'SarController@check');
+Route::resource('assessors', 'AssessorsController');
+Route::post('/check', 'AssessorsController@store');

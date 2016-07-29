@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectionsTable extends Migration
+class CreateSarPrimaryDataListsTable extends Migration
 {
     public $timestamps = false;
     /**
@@ -13,10 +13,12 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('sar_primary_data_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('module');
+            $table->integer('section_id')->unsigned()->index();
             $table->string('name');
+            $table->string('alias');
+            $table->integer('order');
         });
     }
 
@@ -27,6 +29,6 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sections');
+        Schema::drop('sar_primary_data_lists');
     }
 }

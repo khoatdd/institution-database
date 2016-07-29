@@ -16,6 +16,7 @@ class CreateChildTablesTable extends Migration
         Schema::create('child_tables', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('section_id')->unsigned()->index();
+            $table->integer('order')->unsigned();
             $table->string('name');
         });
     }

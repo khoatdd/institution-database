@@ -17,7 +17,6 @@ class CreateHorizontalAttributesTable extends Migration
             $table->increments('id');
             $table->integer('child_table_id')->unsigned()->index();
             $table->string('name');
-            $table->integer('order')->unsigned();
         });
     }
 

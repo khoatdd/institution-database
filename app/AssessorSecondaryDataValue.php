@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SarSecondaryData extends Model
+class AssessorSecondaryDataValue extends Model
 {
     //
 }

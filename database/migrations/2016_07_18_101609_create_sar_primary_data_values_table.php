@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSarPrimaryDatasTable extends Migration
+class CreateSarPrimaryDataValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateSarPrimaryDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('sar_primary_datas', function (Blueprint $table) {
+        Schema::create('sar_primary_data_values', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sar_id')->unsigned()->index();
-            $table->integer('section_id')->unsigned()->index();
-            $table->string('name');
+            $table->integer('sar_id');
+            $table->integer('sar_primary_data_list_id');
             $table->string('value');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ class CreateSarPrimaryDatasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sar_primary_datas');
+        Schema::drop('sar_primary_data_values');
     }
 }

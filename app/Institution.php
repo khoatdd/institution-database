@@ -9,4 +9,8 @@ class Institution extends Model
     public function sars(){
     	return $this->hasMany(Sar::class);
     }
+
+    public function sarPrimaryDataValue() {
+    	return $this->hasManyThrough(SarPrimaryDataValue::class, Sar::class);
+    }
 }
